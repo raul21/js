@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html><head></head><body>
+
+<p id="demo"> Initial content </p>	
+<script>
+
+	function Car (nr, weight, condition, color) {
+		this.nr = nr;
+		this.weight = weight;
+		this.condition = condition;
+		this.color = color;
+		this.getFullData = function () {
+			return this.nr + ' ' + this.weight + ' ' + this.condition + 
+				' ' + this.color;
+		};
+	}
+
+	var bmw = new Car (6756, 1200, 'good', 'black');
+	var mercedes = new Car (3377, 1400, 'perfect', 'white');
+
+	alert (bmw.getFullData ());
+	alert (mercedes.getFullData ());
+
+
+
+
+
+
+
+</script>
+</body></html>
