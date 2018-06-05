@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html><head></head><body>
+
+<p id="demo"> Initial content </p>	
+<script>
+
+
+function A () {
+	this.add = function (x, y) {
+		return x + y;
+	};
+}
+
+function B () {
+}
+
+B.prototype = new A (); // B inherits from A
+
+var a = new A (); // a is an object of type A
+alert (a.add (2, 3));
+
+var b = new B (); // b is an object of type B
+alert (b.add (2, 4)); // b uses A's add method
+
+B.prototype.add = function (x, y) {
+	return (x + y) + ' lei';
+}; // B overrides A's add method
+
+alert (b.add (2, 5));
+
+</script>
+</body></html>

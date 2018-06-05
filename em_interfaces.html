@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html><head></head><body>
+
+<p id="demo"> Initial content </p>	
+<script>
+
+// Emulating interfaces
+var a = {
+	one : '',
+	two : '',
+	three : function (x, y) {console.log ('you must define me!');},
+	four : function () {console.log ('you must define me!');},
+};
+
+var b = {
+	five : '',
+	six : '',
+	seven : function (x, y, z) {console.log ('you must define me!');},
+};
+
+function implement_ab (a, b) {
+	var c = {};
+	for (p in a) {
+		c [p] = a [p];
+	}
+	for (p in b) {
+		c [p] = b [p];
+	}
+	return c;
+}
+
+var c = new Object ();
+c = implement_ab (a, b);
+
+c.four ();
+
+</script>
+</body></html>
